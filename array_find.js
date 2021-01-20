@@ -12,13 +12,13 @@
 //   }
 // }
 
-var marks = [78, 76, 45, 90, 99, 76, 33];
-var max = marks[0];
+// var marks = [78, 76, 45, 90, 99, 76, 33];
+// var max = marks[0];
 
-for (var i = 0; i < marks.length; i++) {
-  var element = marks[i];
-  if (element > max) {
-    max = element;
-  }
-}
-console.log('the highest value is : ', max);
+// for (var i = 0; i < marks.length; i++) {
+//   var element = marks[i];
+//   if (element > max) {
+//     max = element;
+//   }
+// }
+// console.log('the highest value is : ', max);

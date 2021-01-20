@@ -26,3 +26,16 @@ for (var i = 0; i < sumOfArray.length; i++) {
   }
 }
 console.log(sumOfOdd);
+
+// with function
+
+function addALl() {
+  var sum = 0;
+  for (var i = 0; i < arguments.length; i++) {
+    sum += arguments[i];
+  }
+  return sum;
+}
+
+var result = addALl(12, 12, 12);
+console.log(result);
