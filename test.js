@@ -1,28 +1,45 @@
-function fibonacciIte(n) {
-  let fibo = [1, 1];
-  for (let i = 2; i <= n; i++) {
-    let nextFibo = fibo[i - 1] + fibo[i - 2];
-    fibo.push(nextFibo);
+var arr = [1, 2, 3, 4, 5, 100, 6, 7, 8, 9, 10];
+
+// var result = arr.reduce(function (prev, curr) {
+//   return prev + curr;
+// }, 100);
+
+// var max = arr.reduce(function (prev, curr) {
+//   return Math.max(prev, curr);
+// });
+// console.log(max);
+// console.log(result);
+
+function myReduce(arr, callBack, acc) {
+  for (let i = 0; i < arr.length; i++) {
+    acc = callBack(acc, arr[i]);
   }
-  return fibo;
+  return acc;
 }
 
-let result = fibonacciIte(10);
+var result = myReduce(
+  arr,
+  function (prev, curr) {
+    return prev + curr;
+  },
+  0
+);
 console.log(result);
 
-function fibonacciRe(num) {
-  if (num == 0) {
-    return [0];
-  }
-  if (num == 1) {
-    return [1, 1];
-  }
+let max = myReduce(
+  arr,
+  function (prev, curr) {
+    return Math.max(prev, curr);
+  },
+  0
+);
+console.log(max);
 
-  let fibo = fibonacciRe(num - 1);
-  let nextFibo = fibo[num - 1] + fibo[num - 2];
-  fibo.push(nextFibo);
-  return fibo;
-}
-
-// var result = fibonacciRe(10);
-// console.log(result);
+let min = myReduce(
+  arr,
+  function (prev, curr) {
+    return Math.min(prev, curr);
+  },
+  0
+);
+console.log(min);
